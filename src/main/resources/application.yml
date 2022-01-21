@@ -1,0 +1,31 @@
+logging:
+  level:
+    org.hibernate:
+      SQL: TRACE
+      type: TRACE
+#      type.descriptor.sql.BasicBinder: TRACE
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        format_sql: true
+        direct: org.hibernate.dialect.PostgreSQL81Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost/tendo
+    username: russel
+    password: password
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+shell:
+  out:
+    info: CYAN
+    success: GREEN
+    warning: YELLOW
+    error: RED
